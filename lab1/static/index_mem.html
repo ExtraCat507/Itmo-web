@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hi, Bitch</title>
+    <script src="front.js"></script>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: url("https://i.gifer.com/7efs.gif") repeat; /* matrix rain gif */
+            color: #fff;
+            font-family: Comic Sans MS, cursive;
+        }
+
+        .header {
+            font-size: 24px;
+            animation: rainbow 2s infinite linear;
+            text-align: center;
+        }
+
+        @keyframes rainbow {
+            0% { color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { color: violet; }
+        }
+
+        /* мемные картинки */
+        .meme {
+            position: fixed;
+            width: 150px;
+            z-index: 999;
+        }
+        .doge { top: 0; left: 0; }
+        .shrek { bottom: 0; right: 0; }
+        .pepe { bottom: 0; left: 0; }
+        .troll { top: 0; right: 0; }
+
+        button {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff00ff;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🌈 Web - ЛР1 🌈 (мем эдишн)</div>
+
+    <!-- Мемы -->
+    <img class="meme doge" src="https://i.imgur.com/2xO9Y3X.png">
+    <img class="meme shrek" src="https://i.imgur.com/9sYtJgA.png">
+    <img class="meme pepe" src="https://i.imgur.com/n5T9XXM.png">
+    <img class="meme troll" src="https://i.imgur.com/Wl5XrTt.png">
+
+    <!-- основной контент (таблицы, кнопки и т.д.) -->
+    <table border="0" cellpadding="0" cellspacing="0" style="background:#000000aa;">
+        <tr>
+            <th colspan=5>Лабораторка с шутками 🤡</th>
+        </tr>
+        <tr>
+            <th colspan=5>
+                <canvas id="graph" width="400" height="400"></canvas>
+            </th>
+            <td width="50%" rowspan="5" style="background:#111;">
+                <div>
+                    <label for="x">Введите x:</label>
+                    <select name="x" id="x">
+                        <option value="-3">-3</option>
+                        <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <br><br>
+                    <label for="y">Введите y:</label>
+                    <input placeholder="(-5;5)" type="number" name="y" id="y">
+                    <br><br>
+                    <fieldset>
+                        <legend>Введите R</legend>
+                        <div id="radButtons">
+                            <button type="button" value="1">🐸</button>
+                            <button type="button" value="2">💀</button>
+                            <button type="button" value="3">🔥</button>
+                            <button type="button" value="4">🚀</button>
+                            <button type="button" value="5">🍕</button>
+                        </div>
+                    </fieldset>
+                    <br>
+                    <button id="submit-data">Отправить 💥</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <br>
+    <table id="resultTable" border="1" style="background:#222;color:#0f0;">
+        <tbody>
+            <tr>
+                <th>X</th>
+                <th>Y</th>
+                <th>R</th>
+                <th>Result</th>
+                <th>Time</th>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Вставляем звук vine boom -->
+    <audio id="boom" src="https://www.myinstants.com/media/sounds/vine-boom.mp3"></audio>
+    <script>
+        document.getElementById("submit-data").addEventListener("click", ()=>{
+            document.getElementById("boom").play();
+        });
+    </script>
+</body>
+</html>
